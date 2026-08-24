@@ -67,7 +67,9 @@ export async function handleCreatePix(request: Request): Promise<Response> {
 
     if (!mpResponse.ok) {
       console.error("Erro Mercado Pago (create):", mpData);
-      return json({ error: "Não foi possível gerar o Pix. Tente novamente." }, 502);
+      const reason =
+        mpData?.cause?.[0]?.description ?? mpData?.message ?? "motivo não informado";
+      return json({ error: `Não foi possível gerar o Pix (${reason})` }, 502);
     }
 
     const qrCode: string | undefined = mpData?.point_of_interaction?.transaction_data?.qr_code;
