@@ -816,7 +816,7 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-primary px-6 py-24">
+      <section className="woodgrain px-6 py-24">
         <div className="mx-auto max-w-3xl">
           <Reveal className="text-center">
             <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
