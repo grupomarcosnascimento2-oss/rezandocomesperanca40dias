@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import capa from "@/assets/40-dias-capa.png.asset.json";
-import oracao from "@/assets/oracao.jpg";
+import marcos from "@/assets/marcos-nascimento.jpg.asset.json";
 import { Reveal, Ornament } from "@/components/Reveal";
 
 const CHECKOUT_URL = "#oferta";
@@ -409,10 +409,10 @@ function Index() {
         <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-2">
           <Reveal>
             <img
-              src={oracao}
-              alt="Mãos em oração sobre um livro devocional à luz de vela"
-              width={1024}
-              height={1280}
+              src={marcos.url}
+              alt="Marcos Nascimento"
+              width={1297}
+              height={1212}
               loading="lazy"
               className="border-gold/30 w-full rounded-sm border shadow-[var(--shadow-soft)]"
             />
