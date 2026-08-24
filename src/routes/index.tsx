@@ -162,6 +162,7 @@ const faqs = [
 
 function Index() {
   const [leadForm, setLeadForm] = useState({ nome: "", whatsapp: "", email: "" });
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   return (
     <main className="paper overflow-x-hidden pb-24 md:pb-0">
       {/* HERO */}
@@ -823,15 +824,40 @@ function Index() {
             </h2>
             <Ornament className="mt-6" />
           </Reveal>
-          <div className="mt-12 space-y-5">
-            {faqs.map((f, i) => (
-              <Reveal key={f.q} delay={i * 50}>
-                <div className="border-gold/30 border-b pb-5">
-                  <p className="text-gold-light font-serif text-lg">{f.q}</p>
-                  <p className="text-ivory/70 mt-2 text-base leading-relaxed">{f.a}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="mt-12 space-y-3">
+            {faqs.map((f, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <Reveal key={f.q} delay={i * 50}>
+                  <div className="border-gold/30 border-b">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                      className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    >
+                      <span className="text-gold-light font-serif text-lg">{f.q}</span>
+                      <span
+                        className={`text-gold shrink-0 text-xl transition-transform duration-300 ${
+                          isOpen ? "rotate-45" : ""
+                        }`}
+                      >
+                        +
+                      </span>
+                    </button>
+                    <div
+                      className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
+                        isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="text-ivory/70 text-base leading-relaxed">{f.a}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
           <Reveal className="mt-14 text-center">
             <CTA label="🙏 Sim, eu quero começar" className="w-full sm:w-auto" />
