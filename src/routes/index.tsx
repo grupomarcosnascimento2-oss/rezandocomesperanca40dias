@@ -507,33 +507,12 @@ function Index() {
         </div>
       </section>
 
-      {/* TEMAS */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <Reveal>
-            <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
-              Talvez a oração que você precisa esteja aqui.
-            </h2>
-            <Ornament className="mt-6" />
-          </Reveal>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {temas.map((t, i) => (
-              <Reveal key={t} delay={i * 40}>
-                <span className="border-gold/35 text-primary/80 inline-block border bg-white/40 px-5 py-3 font-serif text-base italic">
-                  “{t}”
-                </span>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* EXPERIÊNCIA MULTIMÍDIA */}
       <section className="bg-ivory px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
-              Você não vai apenas ler.
+              Você não vai apenas ler no devocional on-line.
             </h2>
             <p className="script gold-text mt-3 text-4xl md:text-5xl">Você vai rezar comigo.</p>
           </Reveal>
@@ -638,28 +617,6 @@ function Index() {
           <a href={CHECKOUT_URL} className="btn-outline-gold mt-8">
             Quero fazer parte dessa comunidade
           </a>
-        </div>
-      </section>
-
-      {/* PARA QUEM É */}
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-3xl">
-          <Reveal className="text-center">
-            <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
-              Esta jornada é para você que…
-            </h2>
-            <Ornament className="mt-6" />
-          </Reveal>
-          <ul className="mt-10 space-y-3">
-            {paraQuem.map((p, i) => (
-              <Reveal key={p} as="li" delay={i * 45}>
-                <div className="border-gold/25 flex items-start gap-3 border-b pb-3">
-                  <span className="text-gold mt-1 text-xs">✦</span>
-                  <span className="text-foreground/80 text-lg">{p}</span>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
         </div>
       </section>
 
