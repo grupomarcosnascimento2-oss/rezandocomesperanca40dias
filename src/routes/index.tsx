@@ -407,14 +407,14 @@ function Index() {
       {/* MINHA HISTÓRIA */}
       <section className="px-6 py-24">
         <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-2">
-          <Reveal>
+          <Reveal className="flex justify-center">
             <img
               src={marcos.url}
               alt="Marcos Nascimento"
               width={1297}
               height={1212}
               loading="lazy"
-              className="border-gold/30 w-full rounded-sm border shadow-[var(--shadow-soft)]"
+              className="border-gold/30 max-w-[260px] rounded-sm border shadow-[var(--shadow-soft)] md:max-w-[320px]"
             />
           </Reveal>
           <Reveal delay={120}>
