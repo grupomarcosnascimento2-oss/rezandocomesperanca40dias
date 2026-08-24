@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import capa from "@/assets/40-dias-capa.png.asset.json";
 import marcos from "@/assets/marcos-nascimento.jpg.asset.json";
 import { Reveal, Ornament } from "@/components/Reveal";
@@ -128,17 +129,47 @@ const objecoes = [
   },
 ];
 
+const faqs = [
+  {
+    q: "Preciso ter experiência com oração para participar?",
+    a: "Não. Você será conduzido passo a passo, todos os dias, sem precisar saber orações prontas.",
+  },
+  {
+    q: "Quanto tempo preciso dedicar por dia?",
+    a: "Poucos minutos por dia. A jornada foi pensada para caber na sua rotina, não para pesar nela.",
+  },
+  {
+    q: "Como funciona o acesso ao conteúdo?",
+    a: "Você acessa direto pelo navegador, sem precisar instalar nada. Assim que confirmar a contribuição, o acesso é liberado imediatamente.",
+  },
+  {
+    q: "Por quanto tempo terei acesso?",
+    a: "Você terá acesso imediato por 12 meses a todo o conteúdo dos 40 dias, podendo rever quantas vezes quiser.",
+  },
+  {
+    q: "E se eu não conseguir seguir todos os dias seguidos?",
+    a: "Não tem problema. Não é uma cobrança, é uma caminhada. Se precisar parar, volte quando puder e continue de onde parou.",
+  },
+  {
+    q: "A comunidade de oração e o encontro semanal têm custo extra?",
+    a: "Não. Os dois são bônus inclusos gratuitamente para quem entra na jornada dos 40 dias.",
+  },
+  {
+    q: "Este devocional é indicado para qualquer momento de vida?",
+    a: "Sim. Foi pensado especialmente para quem está cansado, preocupado, triste ou precisando reacender a esperança — mas serve para qualquer pessoa que deseje se aproximar de Deus.",
+  },
+];
+
 function Index() {
+  const [leadForm, setLeadForm] = useState({ nome: "", whatsapp: "", email: "" });
   return (
     <main className="paper overflow-x-hidden pb-24 md:pb-0">
       {/* HERO */}
       <section className="woodgrain relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_50%_at_60%_20%,rgba(201,164,90,0.22),transparent_70%)]" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-          <Reveal className="order-2 text-center md:order-1 md:text-left">
-            <p className="eyebrow text-gold-light/90">
-              Uma jornada de 40 dias para reaprender a descansar em Deus
-            </p>
+        <div className="relative mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
+          <Reveal>
+            <p className="eyebrow text-gold-light/90">Você não chegou aqui por acaso!</p>
             <h1 className="text-ivory mt-7 text-4xl leading-[1.12] font-light md:text-6xl">
               Talvez você não precise
               <br className="hidden md:block" /> de mais forças.
@@ -146,23 +177,14 @@ function Index() {
             <p className="script gold-text mt-4 text-4xl md:text-5xl">
               Talvez precise apenas de um momento para rezar.
             </p>
-            <div className="hairline my-8 md:mx-0 md:w-40" />
-            <p className="text-gold-light font-serif text-2xl tracking-wide md:text-3xl">
-              40 Dias Rezando com Marcos Nascimento
-            </p>
-            <p className="text-ivory/70 mx-auto mt-5 max-w-lg text-base leading-relaxed md:mx-0">
+            <div className="hairline my-8 md:mx-auto md:w-40" />
+            <p className="text-ivory/70 mx-auto mt-5 max-w-lg text-base leading-relaxed">
               Uma jornada diária de oração, reflexão e esperança para quem deseja fortalecer a fé,
               encontrar consolo e descansar o coração na presença de Deus.
             </p>
-            <div className="mt-9">
-              <CTA className="w-full md:w-auto" />
-              <p className="text-ivory/60 mt-4 text-sm tracking-wide">
-                Acesso por 1 ano • R$ 29,90
-              </p>
-            </div>
           </Reveal>
 
-          <Reveal className="order-1 md:order-2" delay={150}>
+          <Reveal className="mt-12" delay={150}>
             <div className="relative mx-auto max-w-sm md:max-w-md">
               <div className="absolute -inset-10 rounded-full bg-[radial-gradient(circle,rgba(201,164,90,0.28),transparent_65%)] blur-2xl" />
               <img
@@ -173,6 +195,11 @@ function Index() {
                 className="relative w-full rounded-sm shadow-[var(--shadow-book)]"
               />
             </div>
+          </Reveal>
+
+          <Reveal className="mt-9" delay={220}>
+            <CTA className="w-full md:w-auto" />
+            <p className="text-ivory/60 mt-4 text-sm tracking-wide">Acesso Imediato!</p>
           </Reveal>
         </div>
       </section>
@@ -195,7 +222,9 @@ function Index() {
       <section className="px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <p className="eyebrow text-gold">Como está o seu coração hoje?</p>
+            <h2 className="text-primary font-serif text-3xl font-light md:text-5xl">
+              Como está o seu coração hoje?
+            </h2>
             <div className="text-foreground/85 mx-auto mt-8 max-w-2xl space-y-3 font-serif text-xl leading-relaxed md:text-2xl">
               <p>Talvez você esteja passando por um momento que ninguém conhece.</p>
               <p>Talvez esteja cansado.</p>
@@ -222,21 +251,21 @@ function Index() {
               Se alguma dessas palavras encontrou você, talvez esta jornada tenha chegado no momento
               certo.
             </p>
-            <a href={CHECKOUT_URL} className="btn-outline-gold mt-8">
-              Quero rezar com você
+            <a href={CHECKOUT_URL} className="btn-gold mt-8">
+              QUERO ENCONTRAR PAZ E ESPERANÇA NA ORAÇÃO AGORA!
             </a>
           </Reveal>
         </div>
       </section>
 
       {/* PROMESSA */}
-      <section className="bg-primary px-6 py-24">
+      <section className="woodgrain px-6 py-24">
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 className="text-ivory font-serif text-3xl leading-snug font-light md:text-4xl">
-            Não prometemos uma vida sem problemas.
+            Deus não prometeu uma vida sem problemas.
           </h2>
           <p className="script gold-text mt-5 text-4xl md:text-5xl">
-            Prometemos uma caminhada com Deus no meio deles.
+            Deus prometeu que caminhará com você em meio aos problemas.
           </p>
           <p className="text-ivory/70 mx-auto mt-8 max-w-xl text-lg leading-relaxed">
             Durante 40 dias, você terá um momento diário para parar, respirar, ouvir, refletir e
@@ -259,6 +288,7 @@ function Index() {
       <section className="bg-ivory px-6 py-24">
         <div className="mx-auto max-w-5xl text-center">
           <Reveal>
+            <p className="eyebrow text-gold">Devocional online</p>
             <h2 className="text-primary font-serif text-5xl font-light md:text-6xl">40 Dias</h2>
             <p className="script gold-text -mt-1 text-5xl md:text-6xl">Rezando</p>
             <p className="text-primary/80 mt-2 font-serif text-2xl">
@@ -454,7 +484,7 @@ function Index() {
         <div className="mx-auto max-w-5xl">
           <Reveal className="text-center">
             <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
-              Uma caminhada, um dia de cada vez.
+              Uma caminhada, um dia de cada vez em diversas áreas do devocional online.
             </h2>
             <Ornament className="mt-6" />
           </Reveal>
@@ -467,7 +497,7 @@ function Index() {
                   </span>
                   <div className="hairline my-3" />
                   <p className="text-primary font-serif text-lg leading-snug tracking-wide uppercase">
-                    {e}
+                    Área: {e}
                   </p>
                 </div>
               </Reveal>
@@ -526,11 +556,11 @@ function Index() {
                 <div className="space-y-3">
                   <div className="border-gold/30 flex items-center gap-3 border px-4 py-3">
                     <span>🎧</span>
-                    <span className="text-muted-foreground text-sm">Áudio da oração • 6 min</span>
+                    <span className="text-muted-foreground text-sm">Áudio da oração</span>
                   </div>
                   <div className="border-gold/30 flex items-center gap-3 border px-4 py-3">
                     <span>🎥</span>
-                    <span className="text-muted-foreground text-sm">Vídeo de condução • 4 min</span>
+                    <span className="text-muted-foreground text-sm">Vídeo de condução</span>
                   </div>
                   <div className="border-gold/30 flex items-center gap-3 border px-4 py-3">
                     <span>📖</span>
@@ -546,8 +576,8 @@ function Index() {
         </div>
       </section>
 
-      {/* COMUNIDADE */}
-      <section className="bg-primary px-6 py-24">
+      {/* COMUNIDADE + ENCONTRO SEMANAL */}
+      <section className="woodgrain px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
@@ -576,54 +606,37 @@ function Index() {
               Uma comunidade rezando é uma corrente de fé.
             </p>
           </Reveal>
-        </div>
-      </section>
 
-      {/* ENCONTRO SEMANAL */}
-      <section className="px-6 py-24">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
-            Uma vez por semana, vamos parar juntos.
-          </h2>
-          <p className="text-muted-foreground mt-6 text-lg">
-            Você também terá acesso a um encontro semanal de oração e intercessão, ao vivo e online,
-            com os membros da comunidade.
-          </p>
+          <div className="hairline my-14 mx-auto w-40" />
+
+          <Reveal>
+            <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
+              Uma vez por semana, vamos parar juntos.
+            </h2>
+            <p className="text-ivory/70 mt-6 text-lg">
+              Você também terá acesso a um encontro semanal de oração e intercessão, ao vivo e
+              online, com os membros da comunidade.
+            </p>
+          </Reveal>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {["Ao vivo", "Online", "Oração", "Intercessão"].map((t) => (
               <span
                 key={t}
-                className="border-gold/40 text-gold border px-5 py-2 text-xs tracking-[0.2em] uppercase"
+                className="border-gold/40 text-gold-light border px-5 py-2 text-xs tracking-[0.2em] uppercase"
               >
                 {t}
               </span>
             ))}
           </div>
-          <a href={CHECKOUT_URL} className="btn-outline-gold mt-10">
+          <Reveal className="mt-10">
+            <p className="text-gold-light font-serif text-lg">
+              A comunidade permanente de oração e o encontro semanal são bônus gratuitos para quem
+              entra na jornada dos 40 dias de oração.
+            </p>
+          </Reveal>
+          <a href={CHECKOUT_URL} className="btn-outline-gold mt-8">
             Quero fazer parte dessa comunidade
           </a>
-        </Reveal>
-      </section>
-
-      {/* O QUE VOCÊ RECEBE */}
-      <section className="bg-ivory px-6 py-24">
-        <div className="mx-auto max-w-4xl">
-          <Reveal className="text-center">
-            <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
-              Ao entrar, você recebe
-            </h2>
-            <Ornament className="mt-6" />
-          </Reveal>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2">
-            {recebe.map((r, i) => (
-              <Reveal key={r} delay={i * 50}>
-                <div className="card-paper flex items-center gap-3 px-6 py-5">
-                  <span className="text-gold">✓</span>
-                  <span className="text-primary/85 font-serif text-lg">{r}</span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -700,46 +713,6 @@ function Index() {
         </div>
       </section>
 
-      {/* OFERTA */}
-      <section id="oferta" className="woodgrain px-6 py-24">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-ivory font-serif text-3xl leading-snug font-light md:text-4xl">
-            Sua caminhada com Deus pode começar hoje.
-          </h2>
-          <div className="border-gold/40 mt-10 border bg-black/25 px-7 py-10">
-            <p className="text-gold-light font-serif text-2xl tracking-wide">40 Dias Rezando</p>
-            <p className="script text-gold text-3xl">com Marcos Nascimento</p>
-            <div className="hairline my-6" />
-            <p className="text-ivory font-serif text-5xl">R$ 29,90</p>
-            <p className="text-ivory/60 mt-2 text-sm tracking-[0.2em] uppercase">
-              Pagamento único • Acesso por 1 ano
-            </p>
-            <ul className="mx-auto mt-8 max-w-sm space-y-2 text-left">
-              {[
-                "Devocional online",
-                "40 dias",
-                "Áudios",
-                "Vídeos",
-                "Orações",
-                "Reflexões",
-                "Comunidade de oração",
-                "Encontro semanal ao vivo",
-                "1 ano de acesso",
-              ].map((r) => (
-                <li key={r} className="text-ivory/80 flex items-center gap-3">
-                  <span className="text-gold">✓</span>
-                  {r}
-                </li>
-              ))}
-            </ul>
-            <a href={CHECKOUT_URL} className="btn-gold mt-9 w-full text-base">
-              🙏 Quero começar agora
-            </a>
-            <p className="text-ivory/60 mt-4 text-sm">Pagamento único • Acesso por 1 ano</p>
-          </div>
-        </Reveal>
-      </section>
-
       {/* CHAMAMENTO FINAL */}
       <section className="bg-ivory px-6 py-24 text-center">
         <Reveal className="mx-auto max-w-2xl">
@@ -766,18 +739,105 @@ function Index() {
         </Reveal>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="bg-primary px-6 py-24 text-center">
-        <Reveal className="mx-auto max-w-2xl">
-          <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
-            Venha rezar comigo durante 40 dias.
+      {/* OFERTA */}
+      <section id="oferta" className="woodgrain px-6 py-24">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-ivory font-serif text-3xl leading-snug font-light md:text-4xl">
+            Sua caminhada com Deus pode começar hoje.
           </h2>
-          <p className="text-ivory/70 mt-5 text-lg">
-            Fortaleça sua fé. Entregue suas preocupações. Reacenda a esperança.
+          <p className="text-gold-light mt-4 font-serif text-lg">
+            Contribua hoje mesmo para mantermos essa plataforma no ar!
           </p>
-          <CTA label="🙏 Sim, eu quero começar" className="mt-9 w-full sm:w-auto" />
-          <p className="text-ivory/60 mt-4 text-sm">40 dias • 1 ano de acesso • R$ 29,90</p>
+          <div className="border-gold/40 mt-10 border bg-black/25 px-7 py-10">
+            <p className="text-gold-light font-serif text-2xl tracking-wide">40 Dias Rezando</p>
+            <p className="script text-gold text-3xl">com Marcos Nascimento</p>
+            <div className="hairline my-6" />
+            <p className="text-ivory font-serif text-5xl">R$ 29,90</p>
+            <p className="text-ivory/60 mt-2 text-sm tracking-[0.2em] uppercase">
+              Contribuição única • Acesso Imediato por 12 meses!
+            </p>
+            <ul className="mx-auto mt-8 max-w-sm space-y-2 text-left">
+              {[
+                "Devocional online",
+                "40 dias",
+                "Áudios",
+                "Vídeos",
+                "Orações",
+                "Reflexões",
+                "Comunidade de oração",
+                "Encontro semanal ao vivo",
+                "1 ano de acesso",
+              ].map((r) => (
+                <li key={r} className="text-ivory/80 flex items-center gap-3">
+                  <span className="text-gold">✓</span>
+                  {r}
+                </li>
+              ))}
+            </ul>
+            <div className="mx-auto mt-9 max-w-sm space-y-3 text-left">
+              <input
+                type="text"
+                placeholder="Nome"
+                value={leadForm.nome}
+                onChange={(e) => setLeadForm((f) => ({ ...f, nome: e.target.value }))}
+                className="border-gold/40 text-ivory placeholder:text-ivory/50 w-full border bg-black/20 px-4 py-3 text-sm"
+              />
+              <input
+                type="tel"
+                placeholder="WhatsApp"
+                value={leadForm.whatsapp}
+                onChange={(e) => setLeadForm((f) => ({ ...f, whatsapp: e.target.value }))}
+                className="border-gold/40 text-ivory placeholder:text-ivory/50 w-full border bg-black/20 px-4 py-3 text-sm"
+              />
+              <input
+                type="email"
+                placeholder="E-mail"
+                value={leadForm.email}
+                onChange={(e) => setLeadForm((f) => ({ ...f, email: e.target.value }))}
+                className="border-gold/40 text-ivory placeholder:text-ivory/50 w-full border bg-black/20 px-4 py-3 text-sm"
+              />
+            </div>
+            <a
+              href={CHECKOUT_URL}
+              className={`btn-gold mt-6 w-full text-base ${
+                leadForm.nome && leadForm.whatsapp && leadForm.email
+                  ? ""
+                  : "pointer-events-none opacity-50"
+              }`}
+            >
+              🙏 Quero começar agora
+            </a>
+            <p className="text-ivory/60 mt-4 text-sm">
+              Contribuição única • Acesso Imediato por 12 meses!
+            </p>
+          </div>
         </Reveal>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-primary px-6 py-24">
+        <div className="mx-auto max-w-3xl">
+          <Reveal className="text-center">
+            <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
+              Perguntas Frequentes
+            </h2>
+            <Ornament className="mt-6" />
+          </Reveal>
+          <div className="mt-12 space-y-5">
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={i * 50}>
+                <div className="border-gold/30 border-b pb-5">
+                  <p className="text-gold-light font-serif text-lg">{f.q}</p>
+                  <p className="text-ivory/70 mt-2 text-base leading-relaxed">{f.a}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-14 text-center">
+            <CTA label="🙏 Sim, eu quero começar" className="w-full sm:w-auto" />
+            <p className="text-ivory/60 mt-4 text-sm">Acesso Imediato por 12 meses!</p>
+          </Reveal>
+        </div>
       </section>
 
       {/* FOOTER */}
@@ -789,16 +849,24 @@ function Index() {
           Um devocional para fortalecer a fé em todas as circunstâncias da vida.
         </p>
         <div className="text-ivory/50 mt-6 flex flex-wrap justify-center gap-6 text-sm">
-          <a href="#" className="hover:text-gold-light transition-colors">
+          <a href="/termos" className="hover:text-gold-light transition-colors">
             Termos de uso
           </a>
-          <a href="#" className="hover:text-gold-light transition-colors">
+          <a href="/privacidade" className="hover:text-gold-light transition-colors">
             Política de privacidade
           </a>
-          <a href="#" className="hover:text-gold-light transition-colors">
+          <a
+            href="https://wa.me/5561999999340"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-gold-light transition-colors"
+          >
             Suporte
           </a>
         </div>
+        <p className="text-ivory/40 mt-8 text-xs">
+          © 2026 Marcos Nascimento. Todos os direitos reservados.
+        </p>
       </footer>
 
       {/* CTA FIXO MOBILE */}
