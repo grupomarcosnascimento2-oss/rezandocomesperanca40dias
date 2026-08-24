@@ -620,7 +620,7 @@ function Index() {
         </div>
       </section>
 
-      {/* DEPOIMENTOS */}
+      {/* DEPOIMENTOS — desabilitada temporariamente até termos depoimentos reais dos participantes
       <section className="bg-ivory px-6 py-24">
         <div className="mx-auto max-w-5xl">
           <Reveal className="text-center">
@@ -647,6 +647,7 @@ function Index() {
           </div>
         </div>
       </section>
+      */}
 
       {/* OBJEÇÕES */}
       <section className="px-6 py-24">
