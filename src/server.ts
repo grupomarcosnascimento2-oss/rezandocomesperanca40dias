@@ -2,6 +2,7 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { handleCreatePix, handleMpWebhook, handlePixStatus } from "./lib/mercadopago";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -46,6 +47,18 @@ function isH3SwallowedErrorBody(body: string): boolean {
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/api/create-pix" && request.method === "POST") {
+      return handleCreatePix(request);
+    }
+    if (url.pathname === "/api/pix-status" && request.method === "GET") {
+      return handlePixStatus(request);
+    }
+    if (url.pathname === "/api/mp-webhook") {
+      return handleMpWebhook(request);
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);

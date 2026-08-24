@@ -3,6 +3,7 @@ import { useState } from "react";
 import capa from "@/assets/40-dias-capa.png.asset.json";
 import marcos from "@/assets/marcos-nascimento.jpg.asset.json";
 import { Reveal, Ornament } from "@/components/Reveal";
+import { PixCheckout } from "@/components/PixCheckout";
 
 const CHECKOUT_URL = "#oferta";
 
@@ -756,16 +757,7 @@ function Index() {
                 className="border-gold/40 text-ivory placeholder:text-ivory/50 w-full border bg-black/20 px-4 py-3 text-sm"
               />
             </div>
-            <a
-              href={CHECKOUT_URL}
-              className={`btn-gold mt-6 w-full text-base ${
-                leadForm.nome && leadForm.whatsapp && leadForm.email
-                  ? ""
-                  : "pointer-events-none opacity-50"
-              }`}
-            >
-              🙏 Quero começar agora
-            </a>
+            <PixCheckout leadForm={leadForm} />
             <p className="text-ivory/60 mt-4 text-sm">
               Contribuição única • Acesso Imediato por 12 meses!
             </p>
