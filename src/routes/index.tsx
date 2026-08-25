@@ -508,55 +508,6 @@ function Index() {
         </div>
       </section>
 
-      {/* EXPERIÊNCIA MULTIMÍDIA */}
-      <section className="bg-ivory px-6 py-24">
-        <div className="mx-auto max-w-4xl text-center">
-          <Reveal>
-            <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
-              Você não vai apenas ler no devocional on-line.
-            </h2>
-            <p className="script gold-text mt-3 text-4xl md:text-5xl">Você vai rezar comigo.</p>
-          </Reveal>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {["🎧 Áudios", "🎥 Vídeos", "📖 Textos", "🙏 Orações", "💭 Reflexões"].map((t) => (
-              <span
-                key={t}
-                className="border-gold/40 text-primary/80 border px-5 py-2 text-sm tracking-wide"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-
-          <Reveal className="mt-14">
-            <div className="border-gold/40 bg-primary mx-auto max-w-xl border p-1 shadow-[var(--shadow-soft)]">
-              <div className="paper p-7 text-left">
-                <p className="eyebrow text-gold">Dia 01</p>
-                <h3 className="text-primary mt-2 font-serif text-2xl">Caminhando com Deus</h3>
-                <div className="hairline my-4" />
-                <div className="space-y-3">
-                  <div className="border-gold/30 flex items-center gap-3 border px-4 py-3">
-                    <span>🎧</span>
-                    <span className="text-muted-foreground text-sm">Áudio da oração</span>
-                  </div>
-                  <div className="border-gold/30 flex items-center gap-3 border px-4 py-3">
-                    <span>🎥</span>
-                    <span className="text-muted-foreground text-sm">Vídeo de condução</span>
-                  </div>
-                  <div className="border-gold/30 flex items-center gap-3 border px-4 py-3">
-                    <span>📖</span>
-                    <span className="text-muted-foreground text-sm">Reflexão do dia</span>
-                  </div>
-                </div>
-                <p className="script text-gold mt-5 text-2xl">
-                  Senhor, hoje eu caminho contigo.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       {/* COMUNIDADE + ENCONTRO SEMANAL */}
       <section className="woodgrain px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
