@@ -152,6 +152,10 @@ const faqs = [
     a: "Não tem problema. Não é uma cobrança, é uma caminhada. Se precisar parar, volte quando puder e continue de onde parou.",
   },
   {
+    q: "E se eu me arrepender depois de pagar?",
+    a: "Você tem 7 dias corridos após a contribuição para pedir cancelamento e reembolso integral, sem burocracia, conforme o Código de Defesa do Consumidor.",
+  },
+  {
     q: "A comunidade de oração e o encontro semanal têm custo extra?",
     a: "Não. Os dois são bônus inclusos gratuitamente para quem entra na jornada dos 40 dias.",
   },
@@ -656,6 +660,21 @@ function Index() {
           <p className="script gold-text text-4xl md:text-5xl">
             Senhor, eu entrego minha vida em Tuas mãos.
           </p>
+        </Reveal>
+      </section>
+
+      {/* GARANTIA */}
+      <section className="bg-ivory px-6 py-16">
+        <Reveal className="border-gold/40 mx-auto flex max-w-2xl flex-col items-center gap-4 border bg-white/50 px-8 py-10 text-center sm:flex-row sm:text-left">
+          <span className="text-gold shrink-0 text-5xl">🛡️</span>
+          <div>
+            <p className="text-primary font-serif text-xl">Garantia de 7 dias</p>
+            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+              Se por qualquer motivo você desistir, tem até 7 dias corridos após a contribuição
+              para pedir o cancelamento e reembolso integral, sem burocracia — conforme o Código
+              de Defesa do Consumidor.
+            </p>
+          </div>
         </Reveal>
       </section>
 
