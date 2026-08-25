@@ -179,8 +179,19 @@ function Pagamento() {
           <div className="border-gold/40 border bg-black/30 px-6 py-10">
             <p className="text-gold-light font-serif text-2xl">✓ Pagamento confirmado!</p>
             <p className="text-ivory/70 mt-3 text-sm leading-relaxed">
-              Obrigado por entrar nessa jornada de 40 dias, {nome?.split(" ")[0]}. Em instantes
-              você recebe a confirmação por e-mail e WhatsApp com o acesso ao devocional.
+              Obrigado por entrar nessa jornada de 40 dias, {nome?.split(" ")[0]}. Seu acesso já
+              está liberado.
+            </p>
+            <a
+              href="https://rezando40dias.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-gold mt-6 block w-full text-base"
+            >
+              🙏 Acessar o devocional agora
+            </a>
+            <p className="text-ivory/50 mt-3 text-xs">
+              Você também recebe a confirmação por e-mail e WhatsApp.
             </p>
           </div>
         )}
