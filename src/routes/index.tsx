@@ -561,12 +561,16 @@ function Index() {
       <section className="woodgrain px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
-            <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
+            <span className="border-gold/50 text-gold-light inline-block border px-4 py-1.5 text-xs font-semibold tracking-[0.25em] uppercase">
+              🎁 Bônus 1 — Incluso gratuitamente
+            </span>
+            <h2 className="text-ivory mt-5 font-serif text-3xl font-light md:text-4xl">
               E você não vai caminhar sozinho.
             </h2>
             <p className="text-ivory/70 mx-auto mt-6 max-w-2xl text-lg">
               Além do devocional, você fará parte de uma comunidade permanente de oração e
-              intercessão.
+              intercessão — uma oportunidade real de crescer na fé ao lado de outras pessoas, não
+              sozinho.
             </p>
           </Reveal>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -591,12 +595,16 @@ function Index() {
           <div className="hairline my-14 mx-auto w-40" />
 
           <Reveal>
-            <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
+            <span className="border-gold/50 text-gold-light inline-block border px-4 py-1.5 text-xs font-semibold tracking-[0.25em] uppercase">
+              🎁 Bônus 2 — Incluso gratuitamente
+            </span>
+            <h2 className="text-ivory mt-5 font-serif text-3xl font-light md:text-4xl">
               Uma vez por semana, vamos parar juntos.
             </h2>
             <p className="text-ivory/70 mt-6 text-lg">
               Você também terá acesso a um encontro semanal de oração e intercessão, ao vivo e
-              online, com os membros da comunidade.
+              online — um espaço para aprofundar sua caminhada espiritual junto com a comunidade,
+              tirar dúvidas e crescer em fé a cada semana.
             </p>
           </Reveal>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -611,8 +619,9 @@ function Index() {
           </div>
           <Reveal className="mt-10">
             <p className="text-gold-light font-serif text-lg">
-              A comunidade permanente de oração e o encontro semanal são bônus gratuitos para quem
-              entra na jornada dos 40 dias de oração.
+              Dois bônus gratuitos, duas oportunidades de crescimento: a comunidade permanente de
+              oração e o encontro semanal ao vivo — inclusos para quem entra na jornada dos 40
+              dias.
             </p>
           </Reveal>
           <a href={CHECKOUT_URL} className="btn-outline-gold mt-8">
@@ -724,13 +733,20 @@ function Index() {
                 "Vídeos",
                 "Orações",
                 "Reflexões",
-                "Comunidade de oração",
-                "Encontro semanal ao vivo",
                 "1 ano de acesso",
               ].map((r) => (
                 <li key={r} className="text-ivory/80 flex items-center gap-3">
                   <span className="text-gold">✓</span>
                   {r}
+                </li>
+              ))}
+              {["Comunidade de oração", "Encontro semanal ao vivo"].map((r) => (
+                <li key={r} className="text-gold-light flex items-center gap-3 font-medium">
+                  <span className="text-gold">✓</span>
+                  {r}
+                  <span className="border-gold/50 ml-auto border px-2 py-0.5 text-[0.65rem] tracking-widest uppercase">
+                    Bônus
+                  </span>
                 </li>
               ))}
             </ul>
