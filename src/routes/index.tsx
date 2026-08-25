@@ -437,6 +437,11 @@ function Index() {
             <p>Às vezes Deus muda a situação.</p>
             <p>Às vezes Deus muda o nosso coração para atravessar a situação.</p>
           </Reveal>
+          <Reveal className="mt-10">
+            <a href={CHECKOUT_URL} className="btn-gold">
+              QUERO COMEÇAR A REZAR AGORA
+            </a>
+          </Reveal>
         </div>
       </section>
 
