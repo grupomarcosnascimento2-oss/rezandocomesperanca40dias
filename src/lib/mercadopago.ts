@@ -15,12 +15,20 @@ function json(data: unknown, status = 200): Response {
   });
 }
 
-function notifySheet(payload: Record<string, unknown>) {
-  fetch(SHEET_WEBHOOK_URL, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(payload),
-  }).catch((err) => console.error("Erro ao enviar dados para a planilha:", err));
+async function notifySheet(payload: Record<string, unknown>) {
+  try {
+    const res = await fetch(SHEET_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      const text = await res.text().catch(() => "");
+      console.error("Planilha respondeu com erro:", res.status, text);
+    }
+  } catch (err) {
+    console.error("Erro ao enviar dados para a planilha:", err);
+  }
 }
 
 export async function handleCreatePix(request: Request): Promise<Response> {
@@ -76,7 +84,7 @@ export async function handleCreatePix(request: Request): Promise<Response> {
     const qrCodeBase64: string | undefined =
       mpData?.point_of_interaction?.transaction_data?.qr_code_base64;
 
-    notifySheet({
+    await notifySheet({
       nome,
       whatsapp,
       email,
@@ -152,7 +160,7 @@ export async function handleMpWebhook(request: Request): Promise<Response> {
 
     if (mpResponse.ok && mpData.status === "approved") {
       const nome = `${mpData?.payer?.first_name ?? ""} ${mpData?.payer?.last_name ?? ""}`.trim();
-      notifySheet({
+      await notifySheet({
         action: "pagamento_confirmado",
         nome,
         whatsapp: "",
