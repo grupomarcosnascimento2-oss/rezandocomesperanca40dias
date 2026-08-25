@@ -733,10 +733,10 @@ function Index() {
       </section>
 
       {/* FAQ */}
-      <section className="woodgrain px-6 py-24">
+      <section className="bg-ivory px-6 py-24">
         <div className="mx-auto max-w-3xl">
           <Reveal className="text-center">
-            <h2 className="text-ivory font-serif text-3xl font-light md:text-4xl">
+            <h2 className="text-primary font-serif text-3xl font-light md:text-4xl">
               Perguntas Frequentes
             </h2>
             <Ornament className="mt-6" />
@@ -746,14 +746,14 @@ function Index() {
               const isOpen = openFaq === i;
               return (
                 <Reveal key={f.q} delay={i * 50}>
-                  <div className="border-gold/30 border-b">
+                  <div className="border-gold/40 border-b">
                     <button
                       type="button"
                       onClick={() => setOpenFaq(isOpen ? null : i)}
                       aria-expanded={isOpen}
                       className="flex w-full items-center justify-between gap-4 py-5 text-left"
                     >
-                      <span className="text-gold-light font-serif text-lg">{f.q}</span>
+                      <span className="text-primary font-serif text-lg">{f.q}</span>
                       <span
                         className={`text-gold shrink-0 text-xl transition-transform duration-300 ${
                           isOpen ? "rotate-45" : ""
@@ -768,7 +768,7 @@ function Index() {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <p className="text-ivory/70 text-base leading-relaxed">{f.a}</p>
+                        <p className="text-muted-foreground text-base leading-relaxed">{f.a}</p>
                       </div>
                     </div>
                   </div>
@@ -778,7 +778,7 @@ function Index() {
           </div>
           <Reveal className="mt-14 text-center">
             <CTA label="🙏 Sim, eu quero começar" className="w-full sm:w-auto" />
-            <p className="text-ivory/60 mt-4 text-sm">Acesso Imediato por 12 meses!</p>
+            <p className="text-muted-foreground mt-4 text-sm">Acesso Imediato por 12 meses!</p>
           </Reveal>
         </div>
       </section>
