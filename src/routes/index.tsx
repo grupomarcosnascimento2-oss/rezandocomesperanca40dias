@@ -180,10 +180,6 @@ function Index() {
               Talvez precise apenas de um momento para rezar.
             </p>
             <div className="hairline my-8 md:mx-auto md:w-40" />
-            <p className="text-ivory/70 mx-auto mt-5 max-w-lg text-base leading-relaxed">
-              Uma jornada diária de oração, reflexão e esperança para quem deseja fortalecer a fé,
-              encontrar consolo e descansar o coração na presença de Deus.
-            </p>
           </Reveal>
 
           <Reveal className="mt-12" delay={150}>
@@ -197,6 +193,10 @@ function Index() {
                 className="relative w-full rounded-sm shadow-[var(--shadow-book)]"
               />
             </div>
+            <p className="text-ivory/70 mx-auto mt-6 max-w-lg text-base leading-relaxed">
+              Uma jornada diária de oração, reflexão e esperança para quem deseja fortalecer a fé,
+              encontrar consolo e descansar o coração na presença de Deus.
+            </p>
           </Reveal>
 
           <Reveal className="mt-9" delay={220}>
