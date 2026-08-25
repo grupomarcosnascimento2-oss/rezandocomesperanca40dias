@@ -664,17 +664,32 @@ function Index() {
       </section>
 
       {/* GARANTIA */}
-      <section className="bg-ivory px-6 py-16">
-        <Reveal className="border-gold/40 mx-auto flex max-w-2xl flex-col items-center gap-4 border bg-white/50 px-8 py-10 text-center sm:flex-row sm:text-left">
-          <span className="text-gold shrink-0 text-5xl">🛡️</span>
-          <div>
-            <p className="text-primary font-serif text-xl">Garantia de 7 dias</p>
-            <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
-              Se por qualquer motivo você desistir, tem até 7 dias corridos após a contribuição
-              para pedir o cancelamento e reembolso integral, sem burocracia — conforme o Código
-              de Defesa do Consumidor.
-            </p>
+      <section className="bg-ivory px-6 py-20">
+        <Reveal className="mx-auto flex max-w-2xl flex-col items-center text-center">
+          <div className="relative flex h-28 w-28 shrink-0 items-center justify-center rounded-full">
+            <div
+              className="absolute inset-0 rounded-full"
+              style={{
+                background:
+                  "conic-gradient(from 0deg, #c9a45a, #f3dfa8, #c9a45a, #8a6d2f, #c9a45a)",
+              }}
+            />
+            <div className="border-gold/60 bg-ivory absolute inset-[5px] rounded-full border" />
+            <div className="text-primary relative flex flex-col items-center leading-none">
+              <span className="text-3xl">🛡️</span>
+              <span className="mt-1 font-serif text-2xl font-semibold">7</span>
+              <span className="text-[0.6rem] tracking-[0.15em] uppercase">dias</span>
+            </div>
           </div>
+          <p className="text-primary mt-6 font-serif text-2xl font-light">
+            Garantia incondicional de 7 dias
+          </p>
+          <div className="hairline my-5 w-24" />
+          <p className="text-muted-foreground max-w-md text-sm leading-relaxed">
+            Se por qualquer motivo você desistir, tem até 7 dias corridos após a contribuição para
+            pedir o cancelamento e reembolso integral, sem burocracia — conforme o Código de
+            Defesa do Consumidor.
+          </p>
         </Reveal>
       </section>
 
